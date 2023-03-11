@@ -1,14 +1,18 @@
 import React from "react";
-import { TwoColumn } from "../../components";
+import { Feed, TwoColumn, PictureThumbnail, SearchGalleries, ListedGallery } from "../../components";
 import "./style.css";
 
 export default function PageSearch() {
     return (
         <main className="page-search">
             <TwoColumn left={
-				test
+				<Feed>
+					<PictureThumbnail/>
+				</Feed>
 			} right ={
-				test
+				<SearchGalleries>
+					<ListedGallery />
+				</SearchGalleries>
 			}/>
         </main>
     );
