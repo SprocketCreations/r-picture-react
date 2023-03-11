@@ -16,6 +16,7 @@ export {default as NewPictureGalleries} from "./new-picture-galleries";
 export {default as NewPicturePreview} from "./new-picture-preview";
 export {default as NewPictureTags} from "./new-picture-tags";
 export {default as PictureDetails} from "./picture-details";
+export {default as PicturePreview} from "./picture-preview";
 export {default as PictureThumbnail} from "./picture-thumbnail";
 export {default as SearchGalleries} from "./search-galleries";
 export {default as TrendingTags} from "./trending-tags";

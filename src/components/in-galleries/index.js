@@ -1,10 +1,15 @@
 import React from "react";
 import "./style.css";
 
-export default function InGalleries() {
-    return (
-        <main className="in-galleries">
-            name of the page
-        </main>
-    );
+export default function InGalleries(props) {
+	return (
+		<section className="in-galleries">
+			<header>
+				<h3>In Galleries</h3>
+			</header>
+			<main>
+				{props.children}
+			</main>
+		</section>
+	);
 }
