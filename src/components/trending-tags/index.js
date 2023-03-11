@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.css";
 
-export default function PascalCaseVersionOfFileName() {
+export default function TrendingTags() {
     return (
-        <main className="listed-galleries">
+        <main className="trending-tags">
             name of the page
         </main>
     );

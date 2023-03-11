@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export default function PascalCaseVersionOfFileName() {
+export default function AddToGallery() {
     return (
         <main className="add-to-gallery">
             name of the page

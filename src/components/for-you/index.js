@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export default function PascalCaseVersionOfFileName() {
+export default function ForYou() {
     return (
         <main className="for-you">
             name of the page
