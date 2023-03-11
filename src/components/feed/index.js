@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.css";
 
-export default function Feed() {
+export default function Feed(props) {
     return (
-        <main className="feed">
-            name of the page
-        </main>
+        <section className="feed">
+            {props.children}
+        </section>
     );
 }

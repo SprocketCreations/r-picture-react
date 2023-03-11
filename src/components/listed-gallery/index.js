@@ -2,9 +2,16 @@ import React from "react";
 import "./style.css";
 
 export default function ListedGallery() {
-    return (
-        <main className="listed-gallery">
-            name of the page
-        </main>
-    );
+	return (
+		<section className="listed-gallery">
+			<div>
+				<p>Gallery name</p>
+				<p>12 Followers</p>
+			</div>
+			<div>
+				<button>Follow</button>
+				<button>Following</button>
+			</div>
+		</section>
+	);
 }
