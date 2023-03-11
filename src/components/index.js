@@ -1,0 +1,1 @@
+export {default as NewGalleryDetails} from "./new-gallery-details";
