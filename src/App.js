@@ -22,6 +22,7 @@ function App() {
 		<BrowserRouter>
 			<Navigator />
 			<Routes>
+				<Route path="/" element={<PageHome />} />
 				<Route path="/search/:term" element={<PageSearch />} />
 				<Route path="/user/:userId" element={<PageUserProfile />} />
 				<Route path="/picture/:pictureId" element={<PageViewPicture />} />

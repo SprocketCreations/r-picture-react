@@ -4,6 +4,7 @@ export {default as Comment} from "./comment";
 export {default as Comments} from "./comments";
 export {default as Feed} from "./feed";
 export {default as ForYou} from "./for-you";
+export {default as ForwardButton} from "./forward-button";
 export {default as GalleryDetails} from "./gallery-details";
 export {default as InGalleries} from "./in-galleries";
 export {default as ListedCreator} from "./listed-creator";
