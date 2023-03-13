@@ -1,1 +1,6 @@
 .new-picture-details {}
+.new-picture-details>main {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+}

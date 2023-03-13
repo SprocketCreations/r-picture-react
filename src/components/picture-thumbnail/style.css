@@ -1,1 +1,18 @@
 .picture-thumbnail {}
+
+.picture-thumbnail header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.picture-thumbnail img {
+	width: 100%;
+}
+
+.picture-thumbnail footer {
+	
+}
+.picture-thumbnail footer>span {
+	display: flex;
+	justify-content: space-evenly;
+}

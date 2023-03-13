@@ -1,1 +1,12 @@
-.new-gallery-details {}
+.new-gallery-details {
+	width: 100%;
+}
+.new-gallery-details>header {
+
+}
+.new-gallery-details>main>form {
+	display: flex;
+	flex-direction: column;
+
+	align-items: baseline;
+}

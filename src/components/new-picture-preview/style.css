@@ -1,1 +1,5 @@
-.new-picture-preview {}
+.new-picture-preview {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
