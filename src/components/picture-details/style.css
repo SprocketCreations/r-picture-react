@@ -1,1 +1,20 @@
-.picture-details {}
+.picture-details {
+	background-color: var(--color-neutral-3);
+	
+	padding: var(--size-padding);
+}
+.picture-details>header {
+	text-align: center;
+}
+.picture-details>header>a {
+	color: var(--text-light);
+	text-decoration: none;
+}
+.picture-details>header>a:hover {
+	color: var(--text-light-hover);
+}
+.picture-details>footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

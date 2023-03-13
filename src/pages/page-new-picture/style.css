@@ -3,4 +3,5 @@
 .page-new-picture form.new-picture-form {
 	display: flex;
 	flex-direction: column;
+	gap: var(--size-gap);
 }

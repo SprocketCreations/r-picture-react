@@ -10,12 +10,12 @@ export default function NewPictureTags() {
 			<main>
 				<ul>
 					<li>
-						<button>Tagname X</button>
+						<button>Tagname<span>❌</span></button>
 					</li>
 				</ul>
 			</main>
 			<footer>
-				<button>Add +</button>
+				<button>Add <span>➕</span></button>
 				<section>
 					<header>
 						<input type="search" name="tag-filter-search" id="tag-filter-search" />

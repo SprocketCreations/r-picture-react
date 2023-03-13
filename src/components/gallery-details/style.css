@@ -1,1 +1,9 @@
-.gallery-details {}
+.gallery-details {
+	background-color: var(--color-neutral-3);
+
+	padding: var(--size-padding);
+}
+
+.gallery-details>header {
+	text-align: center;
+}

@@ -1,0 +1,26 @@
+.follow-details {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.follow-details h4 {
+	text-align: center;
+}
+
+.follow-details button {
+	font-size: 1.25em;
+	width: 100%;
+}
+
+.follow-details button span.unfollow {
+	display: none;
+}
+
+.follow-details button:hover span.following {
+	display: none;
+}
+
+.follow-details button:hover span.unfollow {
+	display: initial;
+}

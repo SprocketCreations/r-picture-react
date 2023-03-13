@@ -1,1 +1,7 @@
-.comment {}
+.comment {
+	background-color: var(--color-neutral-3);
+	padding: var(--size-padding);
+}
+.comment h4 {
+	margin-top: 0.5em;
+}

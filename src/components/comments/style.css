@@ -1,1 +1,15 @@
-.comments {}
+.comments {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-gap);
+}
+.comments>header>form {
+	display: flex;
+	align-items: flex-end;
+}
+.comments>main{
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-gap);
+	padding-bottom: var(--size-gap);
+}

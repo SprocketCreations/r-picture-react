@@ -1,19 +1,117 @@
 .navigator {
+	width: var(--size-content-gutter);
+
 	display: flex;
 
-	--navigator-width: 12em;
 	height: 100vh;
-	width: var(--navigator-width);
 }
 
 .navigator>nav {
-	position:fixed;
-	
-	height: 100vh;
-	width: var(--navigator-width);
+	background-color: var(--color-neutral-2);
 
-	padding: var(--size-padding);
+	transition-property: width;
+	transition-duration: 100ms;
+
+	overflow-x: hidden;
+
+	position: fixed;
+
+	height: 100vh;
+	width: var(--size-sidebar-width);
 
 	display: flex;
 	flex-direction: column;
+}
+.navigator>nav {
+	white-space: nowrap;
+}
+
+.navigator>nav>header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.navigator>nav>header a {
+	
+	padding-left: .75em;
+}
+
+.navigator>nav>main {
+	flex: 1 1;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+
+.navigator>nav>main>span {
+	display: flex;
+	flex-direction: column;
+}
+
+.navigator>nav a {
+	padding: var(--size-padding);
+	padding-left: 0;
+	width: 100%;
+
+	text-decoration: none;
+}
+
+.navigator>nav a:hover {
+	background-color: var(--color-neutral-1);
+}
+
+.navigator>nav a>h1,
+.navigator>nav a>h2 {
+	margin: 0;
+}
+
+.navigator>nav.collapsed {
+	width: 3em;
+}
+
+.navigator>nav .collapsable {
+	display: flex;
+
+	gap: 0.5em;
+}
+.navigator>nav .collapsable span.text {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.navigator>nav.collapsed>header>.collapsable,
+.navigator>nav.collapsed .collapsable>h1,
+.navigator>nav.collapsed .collapsable span.text {
+	display: none;
+}
+
+.navigator>nav.collapsed h2 {
+	display: block;
+	width: 100%;
+}
+
+.navigator>nav>header>button,
+.navigator>nav span.icon {
+	flex-shrink: 0;
+	width: 3rem;
+	font-size: 1em;
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navigator>nav p {
+	padding: var(--size-padding);
+	text-align: center;
+	white-space: nowrap;
+	transition-property: opacity;
+	transition-duration: 100ms;
+}
+
+.navigator>nav.collapsed p {
+	opacity: 0;
 }

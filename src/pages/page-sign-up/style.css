@@ -1,14 +1,23 @@
-.page-sign-up {}
+.page-sign-up header {
+	text-align: center;
+}
 
 .page-sign-up section.sign-up-wrapper {
-	height: 100%;
+	background-color: var(--color-neutral-3);
+
+	padding: var(--size-padding);
+
+	margin-top: 15vh;
 
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: stretch;
 }
 
 .page-sign-up form.sign-up-form {
 	display: flex;
 	flex-direction: column;
+	
+	gap: var(--size-gap);
 }
