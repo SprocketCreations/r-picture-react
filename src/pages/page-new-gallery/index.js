@@ -8,7 +8,7 @@ export default function PageNewGallery() {
 		<main className="page-new-gallery">
 			<TwoColumn left ={
 				<NewGalleryDetails/>
-			} right={[]}/>
+			}/>
 		</main>
 	);
 }
