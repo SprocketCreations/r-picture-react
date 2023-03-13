@@ -7,13 +7,100 @@
 }
 
 .navigator>nav {
-	position:fixed;
-	
+	background-color: var(--color-neutral-2);
+
+	position: fixed;
+
 	height: 100vh;
 	width: var(--size-sidebar-width);
 
-	padding: var(--size-padding);
+	display: flex;
+	flex-direction: column;
+}
+
+.navigator>nav>header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.navigator>nav>header a {
+	
+	padding-left: .75em;
+}
+
+.navigator>nav>main {
+	flex: 1 1;
 
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+}
+
+
+.navigator>nav>main>span {
+	display: flex;
+	flex-direction: column;
+}
+
+.navigator>nav a {
+	padding: var(--size-padding);
+	padding-left: 0;
+	width: 100%;
+
+	text-decoration: none;
+}
+
+.navigator>nav a:hover {
+	background-color: var(--color-neutral-1);
+}
+
+.navigator>nav a>h1,
+.navigator>nav a>h2 {
+	margin: 0;
+}
+
+.navigator>nav.collapsed {
+	width: 3em;
+}
+
+.navigator>nav .collapsable {
+	display: flex;
+
+	gap: 0.5em;
+}
+.navigator>nav .collapsable span.text {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.navigator>nav.collapsed>header>.collapsable,
+.navigator>nav.collapsed .collapsable>h1,
+.navigator>nav.collapsed .collapsable span.text {
+	display: none;
+}
+
+.navigator>nav.collapsed h2 {
+	display: block;
+	width: 100%;
+}
+
+.navigator>nav>header>button,
+.navigator>nav span.icon {
+	width: 3rem;
+	font-size: 1em;
+	min-height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navigator>nav p {
+	padding: var(--size-padding);
+	text-align: center;
+	white-space: nowrap;
+}
+
+.navigator>nav.collapsed p {
+	visibility:hidden;
 }
