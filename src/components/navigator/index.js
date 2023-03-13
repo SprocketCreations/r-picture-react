@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import "./style.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navigator() {
 	const [collapsed, setCollapsed] = useState(false);
 
+	const navigate = useNavigate();
+	const [searchInput, setSearchInput] = useState("");
+
 	const signedIn = false;
+
+	const search = event => {
+		event.preventDefault();
+		navigate(`/search/${encodeURIComponent(searchInput)}`);
+	};
 
 	return (
 		<header className="navigator">
@@ -21,7 +29,9 @@ export default function Navigator() {
 						<Link tabindex="-1" to="javascript:void(0);"><h2 className="collapsable">
 							<span className="icon">🔎</span>
 							<span className="text">
-								<input type="search" name="search" id="search" />
+								<form onSubmit={search}>
+									<input value={searchInput} onChange={event=>setSearchInput(event.target.value)} type="search" name="search" id="search" />
+								</form>
 							</span>
 						</h2></Link>
 						<p>
