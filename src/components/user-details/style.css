@@ -1,1 +1,9 @@
-.user-details {}
+.user-details {
+	background-color: var(--color-neutral-3);
+
+	padding: var(--size-padding);
+}
+
+.user-details>header>h2 {
+	text-align: center;
+}

@@ -1,6 +1,30 @@
-.new-picture-details {}
+.new-picture-details {
+	background-color: var(--color-neutral-3);
+
+	padding: var(--size-padding);
+}
+
+.new-picture-details>header {
+	text-align: center;
+}
+
 .new-picture-details>main {
 	display: flex;
 	flex-direction: column;
-	align-items: baseline;
+	align-items: stretch;
+
+	gap: var(--size-gap);
+}
+
+.new-picture-details>main>label {
+	display: flex;
+	justify-content: space-between;
+}
+
+.new-picture-details>main>label>span:first-child {
+	font-style: normal;
+}
+
+.new-picture-details>main>label>span {
+	font-style: italic;
 }

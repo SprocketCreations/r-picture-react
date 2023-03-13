@@ -1,0 +1,19 @@
+.picture-voting {
+	display: flex;
+	align-items: center;
+}
+
+.picture-voting button {
+	font-size: 2em;
+	padding: 0 0.5em;
+	background-color: unset;
+	border: none;
+}
+
+.picture-voting button:last-child {
+	margin-right: -0.5em;
+}
+
+.picture-voting button:hover {
+	color: var(--text-light-hover);
+}

@@ -1,5 +1,35 @@
 .new-picture-preview {
+	background-color: var(--color-neutral-3);
+
+	padding: var(--size-padding);
+
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+
+.new-picture-preview .picture-file-empty {
+	background-color: var(--color-neutral-4);
+	flex: 1 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	aspect-ratio: 1;
+}
+
+.new-picture-preview .picture-file-empty span {
+	background-color: var(--color-secondary-2);
+	cursor: pointer;
+	padding: 0.5em;
+}
+
+.new-picture-preview .picture-file-empty span:hover {
+	background-color: var(--color-secondary-2-alt);
+}
+
+.new-picture-preview .picture-file-label{
+	cursor: pointer;
+}
+.new-picture-preview .picture-file-label img{
+	width: 100%;
 }

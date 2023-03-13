@@ -1,12 +1,32 @@
 .new-gallery-details {
+	margin-top: 10vh;
 	width: 100%;
-}
-.new-gallery-details>header {
+	background-color: var(--color-neutral-3);
 
+	padding: var(--size-padding);
 }
+
+.new-gallery-details>header {
+	text-align: center;
+}
+
 .new-gallery-details>main>form {
 	display: flex;
 	flex-direction: column;
+	
+	gap: var(--size-gap);
+	
+	align-items: stretch;
+}
 
-	align-items: baseline;
+
+.new-gallery-details>main>form>label {
+	display: flex;
+	justify-content: space-between;
+}
+.new-gallery-details>main>form>label>span {
+	font-style: italic;
+}
+.new-gallery-details>main>form>label>span:first-child {
+	font-style: normal;
 }
