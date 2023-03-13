@@ -8,6 +8,9 @@ export default function PageHome() {
 			<TwoColumn left={
 				<Feed>
 					<PictureThumbnail/>
+					<PictureThumbnail/>
+					<PictureThumbnail/>
+					<PictureThumbnail/>
 				</Feed>
 			} right={[
 				//Nothing for now.

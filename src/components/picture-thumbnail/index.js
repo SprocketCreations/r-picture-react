@@ -7,29 +7,37 @@ import { Link } from "react-router-dom";
 export default function PictureThumbnail() {
 	return (
 		<artical className="picture-thumbnail">
-			<Link to="/picture/3">
-				<header>
-					<Link to="/user/23">Username</Link>
-					<Link to="/gallery/23">Gallery</Link>
-				</header>
-				<main>
+			<main>
+				<Link to="/picture/3">
 					<img src="http://placekitten.com/200/300" />
-				</main>
-				<footer>
-					<h3>Picture Name</h3>
-					<span>
-						<span>
-							12💬
-						</span>
+				</Link>
+			</main>
+			<header className="picture-meta">
+				<row>
+					<column>
+						<Link to="/user/23"><h4>Username</h4></Link>
+					</column>
+					<column>
+						<Link to="/picture/3"><h3>Picture Name</h3></Link>
+					</column>
+					<column>
+						<Link to="/gallery/23"><h4>Gallery</h4></Link>
+					</column>
+				</row>
+				<row>
+					<column>
+						<Link to="/picture/3">12💬</Link>
+					</column>
+					<column>
 						<ForwardButton />
-						<span>
-							<button>⬆</button>
-							<span>14</span>
-							<button>⬇</button>
-						</span>
-					</span>
-				</footer>
-			</Link>
-		</artical>
+					</column>
+					<column className="vote-widget">
+						<button>⬆</button>
+						<span>14</span>
+						<button>⬇</button>
+					</column>
+				</row>
+			</header >
+		</artical >
 	);
 }

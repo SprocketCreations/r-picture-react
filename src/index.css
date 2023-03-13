@@ -53,9 +53,12 @@ textarea {
 }
 
 button {
-	padding: var(--size-padding);
 	background-color: var(--color-secondary-1);
 	border: 2px rgb(0, 0, 0, 0) solid;
+
+	cursor: pointer;
+
+	padding: var(--size-padding);
 }
 
 button:hover {
@@ -89,7 +92,9 @@ code {
 	--color-neutral-4: rgb(34, 34, 92);
 
 	--text-light: white;
+	--text-light-hover: gray;
 	--text-dark: black;
+	--text-dark-hover: gray;
 	--text-link: blue;
 	--text-link-visited: purple;
 
