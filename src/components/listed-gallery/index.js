@@ -4,14 +4,14 @@ import "./style.css";
 export default function ListedGallery() {
 	return (
 		<section className="listed-gallery">
-			<div>
+			<header>
 				<p>Gallery name</p>
 				<p>12 Followers</p>
-			</div>
-			<div>
+			</header>
+			<main>
 				<button>Follow</button>
 				<button>Following</button>
-			</div>
+			</main>
 		</section>
 	);
 }

@@ -9,9 +9,9 @@ export default function UserDetails() {
 			</header>
 			<main>
 				<p>Biography</p>
+				<span>12 Followers</span>
 			</main>
 			<footer>
-				<span>12 Followers</span>
 				<button>Follow</button>
 				<button>Following</button>
 			</footer>
