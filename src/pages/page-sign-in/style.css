@@ -1,14 +1,23 @@
-.page-sign-in {}
+.page-sign-in header,
+.page-sign-in footer {
+	text-align: center;
+}
 
 .page-sign-in section.sign-in-wrapper {
-	height: 100%;
+	background-color: var(--color-neutral-3);
+
+	padding: var(--size-padding);
+	
+	margin-top: 25vh;
 	
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: stretch;
 }
 
 .page-sign-in form.sign-in-form {
 	display: flex;
 	flex-direction: column;
+	gap: var(--size-gap);
 }
