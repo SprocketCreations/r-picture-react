@@ -1,1 +1,6 @@
 .page-new-picture {}
+
+.page-new-picture form.new-picture-form {
+	display: flex;
+	flex-direction: column;
+}
