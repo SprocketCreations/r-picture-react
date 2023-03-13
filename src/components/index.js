@@ -3,6 +3,7 @@ export {default as AddToGalleryConfirm} from "./add-to-gallery-confirm";
 export {default as Comment} from "./comment";
 export {default as Comments} from "./comments";
 export {default as Feed} from "./feed";
+export {default as FollowDetails} from "./follow-details";
 export {default as ForYou} from "./for-you";
 export {default as ForwardButton} from "./forward-button";
 export {default as GalleryDetails} from "./gallery-details";

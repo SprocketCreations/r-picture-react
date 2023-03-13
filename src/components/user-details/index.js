@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 
+import { FollowDetails } from "../../components"
+
 export default function UserDetails() {
 	return (
 		<section className="user-details">
@@ -9,11 +11,9 @@ export default function UserDetails() {
 			</header>
 			<main>
 				<p>Biography</p>
-				<span>12 Followers</span>
 			</main>
 			<footer>
-				<button>Follow</button>
-				<button>Following</button>
+				<FollowDetails/>
 			</footer>
 		</section>
 	);
