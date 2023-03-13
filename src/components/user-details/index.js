@@ -13,6 +13,7 @@ export default function UserDetails() {
 				<p>Biography</p>
 			</main>
 			<footer>
+				<h4>12 Followers</h4>
 				<FollowButton/>
 			</footer>
 		</section>
