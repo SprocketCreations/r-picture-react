@@ -30,3 +30,6 @@
 .new-picture-preview .picture-file-label{
 	cursor: pointer;
 }
+.new-picture-preview .picture-file-label img{
+	width: 100%;
+}

@@ -21,3 +21,16 @@
 	
 	gap: var(--size-gap);
 }
+
+.page-sign-up form.sign-up-form label {
+	display: flex;
+	justify-content: space-between;
+}
+
+.page-sign-up form.sign-up-form label>span:first-child {
+	font-style: normal;
+}
+
+.page-sign-up form.sign-up-form label>span {
+	font-style: italic;
+}

@@ -13,8 +13,20 @@
 .new-gallery-details>main>form {
 	display: flex;
 	flex-direction: column;
-
+	
 	gap: var(--size-gap);
-
+	
 	align-items: stretch;
+}
+
+
+.new-gallery-details>main>form>label {
+	display: flex;
+	justify-content: space-between;
+}
+.new-gallery-details>main>form>label>span {
+	font-style: italic;
+}
+.new-gallery-details>main>form>label>span:first-child {
+	font-style: normal;
 }

@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./style.css";
 
-export default function NewPictureTags() {
+/**
+ * @typedef {object} NewPictureTagsProp
+ * @property {string[]} tags The tags to display.
+ * @property {(tags: string[]) => void} setTags A setter for the tags.
+ */
+/**
+ * @param {NewPictureTagsProp} props
+ * @returns {JSX.Element}
+ */
+export default function NewPictureTags({ tags, setTags }) {
+	const [showTextBox, setShowTextBox] = useState(false);
+	const [newTagName, setNewTagName] = useState("");
+
+	const searchBoxRef = useRef(null);
+	useEffect(() => {
+		searchBoxRef?.current?.focus();
+	}, [showTextBox]);
+
+	const removeTag = index => {
+		setTags(tags.filter((tag, i) => index != i));
+	};
+
+	const submit = event => {
+		event.preventDefault();
+
+		if (newTagName) {
+			if (tags.find(tag => tag === newTagName)) {
+				//Tag is taken, don't add
+			}
+			else {
+				setTags(tags.concat([newTagName]))
+			}
+		}
+
+		setNewTagName("");
+		setShowTextBox(false);
+	};
+
 	return (
 		<section className="new-picture-tags">
 			<header>
@@ -9,23 +46,24 @@ export default function NewPictureTags() {
 			</header>
 			<main>
 				<ul>
-					<li>
-						<button>Tagname<span>❌</span></button>
-					</li>
+					{tags.map((tag, i) => <li key={i}><button onClick={() => removeTag(i)}>{tag}<span>❌</span></button></li>)}
 				</ul>
 			</main>
 			<footer>
-				<button>Add <span>➕</span></button>
-				<section>
-					<header>
-						<input type="search" name="tag-filter-search" id="tag-filter-search" />
-						<ul>
-							<li><button>Tag</button></li>
-							<li><button>Tag2</button></li>
-							<li><button>Tag3</button></li>
-						</ul>
-					</header>
-				</section>
+				<form onSubmit={submit}>
+					{showTextBox ?
+						<input
+							ref={searchBoxRef}
+							value={newTagName}
+							onChange={event => setNewTagName(event.target.value.toLowerCase())}
+							type="search"
+							name="tag-filter-search"
+							id="tag-filter-search" />
+						: <button
+							onClick={() => setShowTextBox(true)}
+						>Add <span>➕</span></button>
+					}
+				</form>
 			</footer>
 		</section>
 	);
