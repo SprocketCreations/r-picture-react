@@ -8,9 +8,14 @@ export default function PageSearch() {
             <TwoColumn left={
 				<Feed>
 					<PictureThumbnail/>
+					<PictureThumbnail/>
+					<PictureThumbnail/>
+					<PictureThumbnail/>
 				</Feed>
 			} right ={
 				<SearchGalleries>
+					<ListedGallery />
+					<ListedGallery />
 					<ListedGallery />
 				</SearchGalleries>
 			}/>

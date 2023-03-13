@@ -13,10 +13,10 @@
 
 /* Left column */
 .two-column>div:first-of-type {
-	flex-basis: var(--size-content-width);
+	width: var(--size-content-width);
 }
 
 /* Right column */
 .two-column>div:last-of-type {
-
+	flex: 1 1;
 }
