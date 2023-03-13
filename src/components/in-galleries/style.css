@@ -1,1 +1,10 @@
-.in-galleries {}
+.in-galleries {
+	background-color: var(--color-neutral-3);
+	
+	padding: var(--size-padding);
+}
+.in-galleries>main {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-gap);
+}

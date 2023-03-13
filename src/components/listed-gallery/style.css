@@ -1,1 +1,22 @@
-.listed-galleries {}
+.listed-gallery {
+	display: flex;
+
+	gap: 1em;
+	align-items:center;
+}
+
+.listed-gallery>header {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+}
+.listed-gallery>header p {
+	margin: 0;
+}
+.listed-gallery>main {
+	flex: 1 1;
+}
+.listed-gallery>main button {
+	font-size: 1.125em;
+}

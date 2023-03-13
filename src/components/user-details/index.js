@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-import { FollowDetails } from "../../components"
+import { FollowButton } from "../../components"
 
 export default function UserDetails() {
 	return (
@@ -13,7 +13,7 @@ export default function UserDetails() {
 				<p>Biography</p>
 			</main>
 			<footer>
-				<FollowDetails/>
+				<FollowButton/>
 			</footer>
 		</section>
 	);

@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
-import { ForwardButton } from "../../components"
+
+import { ForwardButton, PictureVoting } from "../"
 
 import { Link } from "react-router-dom";
 
@@ -32,9 +33,7 @@ export default function PictureThumbnail() {
 						<ForwardButton />
 					</column>
 					<column className="vote-widget">
-						<button>⬆</button>
-						<span>14</span>
-						<button>⬇</button>
+						<PictureVoting/>
 					</column>
 				</row>
 			</header >

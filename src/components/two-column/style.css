@@ -9,6 +9,7 @@
 .two-column>div {
 	display: flex;
 	flex-direction: column;
+	gap: var(--size-gap);
 
 	min-height: 100vh;
 }

@@ -1,6 +1,7 @@
 .follow-details {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 }
 
 .follow-details h4 {
@@ -9,6 +10,7 @@
 
 .follow-details button {
 	font-size: 1.25em;
+	width: 100%;
 }
 
 .follow-details button span.unfollow {

@@ -42,16 +42,3 @@
 .picture-thumbnail .picture-meta>row>column:last-child {
 	justify-content: flex-end;
 }
-
-.picture-thumbnail .picture-meta .vote-widget button {
-	font-size: 2em;
-	padding: 0 0.5em;
-	background-color: unset;
-	border: none;
-}
-.picture-thumbnail .picture-meta .vote-widget button:last-child {
-	margin-right: -0.5em;
-}
-.picture-thumbnail .picture-meta .vote-widget button:hover {
-	color: var(--text-light-hover);
-}

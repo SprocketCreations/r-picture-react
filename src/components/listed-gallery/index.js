@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 
+import { FollowButton } from "../";
+
 export default function ListedGallery() {
 	return (
 		<section className="listed-gallery">
@@ -9,8 +11,7 @@ export default function ListedGallery() {
 				<p>12 Followers</p>
 			</header>
 			<main>
-				<button>Follow</button>
-				<button>Following</button>
+				<FollowButton/>
 			</main>
 		</section>
 	);

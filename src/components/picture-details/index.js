@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import ForwardButton from "../forward-button";
 import "./style.css";
+
+import { Link } from "react-router-dom";
+import { ForwardButton, PictureVoting } from "../";
 
 export default function PictureDetails() {
 	return (
@@ -17,6 +18,7 @@ export default function PictureDetails() {
 			</main>
 			<footer>
 				<ForwardButton />
+				<PictureVoting />
 			</footer>
 		</section>
 	);
