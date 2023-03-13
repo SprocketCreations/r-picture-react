@@ -1,8 +1,16 @@
-.new-picture-tags {}
+.new-picture-tags {
+	background-color: var(--color-neutral-3);
+
+	padding: var(--size-padding);
+}
+
+.new-picture-tags>header {
+	text-align: center;
+}
 
 .new-picture-tags ul {
 	padding-left: 0;
-	
+
 	list-style-type: none;
 
 	display: flex;
@@ -12,6 +20,12 @@
 .new-picture-tags button {
 	width: 100%;
 	height: 100%;
+
+	font-size: 1.25em;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .new-picture-tags input {
