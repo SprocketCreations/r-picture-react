@@ -26,6 +26,7 @@ export default function PageNewPicture() {
 					<NewPictureDetails name={name} setName={setName} />
 					<NewPicturePreview setSrc={setSrc} src={src} />
 					<footer className="submit-button">
+						{!src && <p>Picture is required.</p>}
 						<button>Post</button>
 					</footer>
 				</form>

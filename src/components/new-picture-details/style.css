@@ -15,3 +15,16 @@
 
 	gap: var(--size-gap);
 }
+
+.new-picture-details>main>label {
+	display: flex;
+	justify-content: space-between;
+}
+
+.new-picture-details>main>label>span:first-child {
+	font-style: normal;
+}
+
+.new-picture-details>main>label>span {
+	font-style: italic;
+}
