@@ -1,1 +1,14 @@
 .page-sign-in {}
+
+.page-sign-in section.sign-in-wrapper {
+	height: 100%;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.page-sign-in form.sign-in-form {
+	display: flex;
+	flex-direction: column;
+}
