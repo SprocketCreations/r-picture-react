@@ -1,0 +1,4 @@
+.picture-preview {}
+.picture-preview>img {
+	width: 100%;
+}

@@ -1,0 +1,19 @@
+.navigator {
+	display: flex;
+
+	--navigator-width: 12em;
+	height: 100vh;
+	width: var(--navigator-width);
+}
+
+.navigator>nav {
+	position:fixed;
+	
+	height: 100vh;
+	width: var(--navigator-width);
+
+	padding: var(--size-padding);
+
+	display: flex;
+	flex-direction: column;
+}

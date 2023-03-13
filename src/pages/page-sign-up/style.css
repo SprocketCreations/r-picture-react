@@ -1,0 +1,14 @@
+.page-sign-up {}
+
+.page-sign-up section.sign-up-wrapper {
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.page-sign-up form.sign-up-form {
+	display: flex;
+	flex-direction: column;
+}
