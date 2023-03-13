@@ -1,7 +1,16 @@
 import React from "react";
 import "./style.css";
 
-export default function NewPictureDetails() {
+/**
+ * @typedef {object} NewPictureDetailsProp
+ * @property {string} name The name of the picture to display.
+ * @property {(name: string) => void} setName A setter for the name.
+ */
+/**
+ * @param {NewPictureDetailsProp} props
+ * @returns {JSX.Element}
+ */
+export default function NewPictureDetails({name, setName}) {
 	return (
 		<section className="new-picture-details">
 			<header>
@@ -9,7 +18,7 @@ export default function NewPictureDetails() {
 			</header>
 			<main>
 				<label htmlFor="picture-name">Name</label>
-				<input type="text" name="picture-name" id="picture-name"/>
+				<input value={name} onChange={event => setName(event.target.value)} type="text" name="picture-name" id="picture-name"/>
 			</main>
 		</section>
 	);
