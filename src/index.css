@@ -1,10 +1,13 @@
 * {
 	box-sizing: border-box;
+
+	color: var(--text-light);
 }
 
 html {}
 
 body {
+	background-color: var(--color-neutral-1);
 
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -25,6 +28,44 @@ body {
 #root>main {
 	flex: 1 1;
 }
+
+a {
+	color: var(--text-link);
+}
+
+a:visited {
+	color: var(--text-link-visited);
+}
+
+input,
+textarea {
+	background-color: var(--color-neutral-3);
+	border: 2px gray inset;
+}
+
+input:hover,
+textarea:hover {
+	border-color: var(--color-neutral-2);
+}
+textarea {
+	width: 100%;
+	resize: vertical;
+}
+
+button {
+	padding: var(--size-padding);
+	background-color: var(--color-secondary-1);
+	border: 2px rgb(0, 0, 0, 0) solid;
+}
+
+button:hover {
+	background-color: var(--color-secondary-1-alt);
+}
+
+button:focus {
+	border: 2px var(--color-secondary-1) inset;
+}
+
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -54,6 +95,6 @@ code {
 
 	--size-content-width: 50vw;
 	--size-gap: 1em;
-	--size-padding: 1em 0.5em;
+	--size-padding: .5em 1em;
 	--size-margin: 1em;
 }
