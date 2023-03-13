@@ -1,16 +1,16 @@
 .navigator {
+	width: var(--size-content-gutter);
+
 	display: flex;
 
-	--navigator-width: 12em;
 	height: 100vh;
-	width: var(--navigator-width);
 }
 
 .navigator>nav {
 	position:fixed;
 	
 	height: 100vh;
-	width: var(--navigator-width);
+	width: var(--size-sidebar-width);
 
 	padding: var(--size-padding);
 

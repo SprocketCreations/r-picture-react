@@ -93,7 +93,9 @@ code {
 	--text-link: blue;
 	--text-link-visited: purple;
 
-	--size-content-width: 50vw;
+	--size-content-width: calc(100vw / 3);
+	--size-content-gutter: calc(calc(100vw - var(--size-content-width)) / 2);
+	--size-sidebar-width: calc(var(--size-content-gutter) / 2);
 	--size-gap: 1em;
 	--size-padding: .5em 1em;
 	--size-margin: 1em;
