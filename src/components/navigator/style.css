@@ -9,6 +9,11 @@
 .navigator>nav {
 	background-color: var(--color-neutral-2);
 
+	transition-property: width;
+	transition-duration: 100ms;
+
+	overflow-x: hidden;
+
 	position: fixed;
 
 	height: 100vh;
@@ -16,6 +21,9 @@
 
 	display: flex;
 	flex-direction: column;
+}
+.navigator>nav {
+	white-space: nowrap;
 }
 
 .navigator>nav>header {
@@ -87,9 +95,10 @@
 
 .navigator>nav>header>button,
 .navigator>nav span.icon {
+	flex-shrink: 0;
 	width: 3rem;
 	font-size: 1em;
-	min-height: 3rem;
+	height: 3rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -99,8 +108,10 @@
 	padding: var(--size-padding);
 	text-align: center;
 	white-space: nowrap;
+	transition-property: opacity;
+	transition-duration: 100ms;
 }
 
 .navigator>nav.collapsed p {
-	visibility:hidden;
+	opacity: 0;
 }

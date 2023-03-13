@@ -95,7 +95,7 @@ code {
 
 	--size-content-width: calc(100vw / 3);
 	--size-content-gutter: calc(calc(100vw - var(--size-content-width)) / 2);
-	--size-sidebar-width: calc(var(--size-content-gutter) / 2);
+	--size-sidebar-width: 256px;
 	--size-gap: 1em;
 	--size-padding: .5em 1em;
 	--size-margin: 1em;
