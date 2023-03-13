@@ -1,1 +1,22 @@
-.two-column {}
+.two-column {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.two-column>div {
+	display: flex;
+	flex-direction: column;
+
+	flex: 1 1;
+}
+
+/* Left column */
+.two-column>div:first-of-type {
+	flex-basis: var(--size-content-width);
+}
+
+/* Right column */
+.two-column>div:last-of-type {
+
+}
