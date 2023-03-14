@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import "./style.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TwoColumn } from "../../components";
 import { useUser } from "../../utils";
 
 export default function PageSignIn() {
+	const navigate = useNavigate();
 	const [, setUser] = useUser();
 	const [forbidden, setForbidden] = useState(false);
 	const [email, setEmail] = useState("");
@@ -32,17 +33,17 @@ export default function PageSignIn() {
 				//Created
 				const json = await response.json();
 
-				console.log(json.token);
 				setUser(json.token);
 
 				setEmail("");
 				setPassword("");
+				
+				navigate("/");
 			}
 		} catch (error) {
 			console.log(error);
 		}
 		setOutgoing(false);
-		//redirect to home page
 	}
 
 	const submit = event => {
