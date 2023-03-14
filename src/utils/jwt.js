@@ -1,4 +1,6 @@
 import jwtDecode from "jwt-decode";
+import { setCookie, getCookie, removeCookie } from "tiny-cookie";
+import dayjs from "dayjs";
 
 /**
  * @typedef {object} User
@@ -41,6 +43,13 @@ export const unlistenToChange = callback => {
  * @returns {User} A copy of the user.
  */
 export const getUser = () => {
+	if(!user.token) {
+		const userCookie = getCookie("user", JSON.parse);
+		console.log(userCookie);
+		user.displayName = userCookie.displayName;
+		user.id = userCookie.id;
+		user.token = userCookie.token;
+	}
 	return { ...user };
 };
 
@@ -53,6 +62,9 @@ export const setUser = (jsonwebtoken, callOnFailure) => {
 		const data = jwtDecode(jsonwebtoken);
 		user.id = data.userId;
 		user.token = jsonwebtoken;
+		setCookie("user", user, JSON.stringify, {
+			expires: dayjs.unix(data.exp).toDate()
+		});
 		callCallbacks();
 	} catch (error) {
 		if (error.name === "InvalidTokenError") {
