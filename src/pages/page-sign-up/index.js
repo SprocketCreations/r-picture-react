@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import "./style.css";
 
+import { useNavigate } from "react-router-dom";
 import { TwoColumn } from "../../components";
+import { useUser } from "../../utils";
 
 export default function PageSignUp() {
+	const [outgoing, setOutgoing] = useState(false);
+	const navigate = useNavigate();
+	const [, setUser] = useUser();
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -12,15 +17,41 @@ export default function PageSignUp() {
 	const validateEmail = email => /^[\w\.-]+@([\w-]+\.)+[\w]{2,8}$/.test(email);
 	const validatePassword = password => !/^(.{0,7}|[^A-Z]*|[^a-z]*|[^0-9]*|[A-Za-z0-9]*)$/.test(password);
 
+	const signup = async () => {
+		try {
+			const response = await fetch(`${process.env.REACT_APP_API_HOST}/api/user`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ displayName: name, email: email, password: password }),
+			});
+
+			if (response.status === 201) {
+				//Created
+				const json = await response.json();
+
+				setUser(json.jwt);
+
+				setName("");
+				setEmail("");
+				setPassword("");
+				setRepeatPassword("");
+				
+				navigate("/");
+			}
+		} catch (error) {
+			console.log(error);
+		}
+		setOutgoing(false);
+	};
+
 	const submit = event => {
 		event.preventDefault();
 
-		if (name && validateEmail(email) && validatePassword(password) && password === repeatPassword) {
-
-			setName("");
-			setEmail("");
-			setPassword("");
-			setRepeatPassword("");
+		if (!outgoing && name && validateEmail(email) && validatePassword(password) && password === repeatPassword) {
+			setOutgoing(true);
+			signup();
 		}
 	};
 
