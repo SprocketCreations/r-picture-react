@@ -17,3 +17,11 @@
 .picture-voting button:hover {
 	color: var(--text-light-hover);
 }
+
+.picture-voting .voted {
+	color: var(--color-secondary-3);
+}
+
+.picture-voting .voted:hover {
+	color: var(--color-secondary-3-alt);
+}
