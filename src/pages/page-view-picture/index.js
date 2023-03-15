@@ -48,9 +48,13 @@ export default function PageViewPicture() {
 		<main className="page-view-picture">
 			<TwoColumn left={[
 				<PicturePreview />,
-				<Comments>
-					<Comment />
-					<Comment />
+				<Comments pictureId={picture?.id} refetch={load}>
+					{picture?.comments?.map(comment =>
+						<Comment
+							ownerId={comment.owner?.id}
+							ownerName={comment.owner?.displayName}
+							text={comment.text}
+						/>)}
 				</Comments>
 			]} right={[
 				<PictureDetails
