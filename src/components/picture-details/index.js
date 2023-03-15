@@ -4,21 +4,43 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import { ForwardButton, PictureVoting } from "../";
 
-export default function PictureDetails() {
+/**
+ * @typedef {object} PictureDetailsProp
+ * @property {string} name
+ * @property {object} owner
+ * @property {number} owner.id
+ * @property {string} owner.displayName
+ * @property {string} description
+ * @property {number} pictureId
+ * @property {number} score
+ * @property {object} like
+ * @property {number} like.id
+ * @property {number} like.delta
+ * @property {function():void} refetch A function to call when the picture's state has changed to force a reload.
+ */
+/**
+ * @param {PictureDetailsProp} props
+ * @returns {JSX.Element}
+ */
+export default function PictureDetails({ name, owner, description, pictureId, score, like, refetch }) {
 	return (
 		<section className="picture-details">
 			<header>
-				<h3>Picture Name</h3>
-				<Link to="/user/45">Owner name</Link>
+				<h3>{name}</h3>
+				<Link to={`/user/${owner?.id}`}>{owner?.displayName}</Link>
 			</header>
 			<main>
-				<p>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, corrupti. Saepe maiores perspiciatis beatae commodi perferendis corrupti neque exercitationem incidunt quos dignissimos delectus officia ab, obcaecati suscipit aut accusantium nesciunt.
-				</p>
+				<p>{description}</p>
 			</main>
 			<footer>
 				<ForwardButton />
-				<PictureVoting />
+				<PictureVoting
+					pictureId={pictureId}
+					score={score}
+					id={like?.id}
+					delta={like?.delta}
+					refetch={refetch}
+				/>
 			</footer>
 		</section>
 	);
