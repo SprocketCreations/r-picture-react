@@ -3,18 +3,35 @@ import "./style.css";
 
 import { FollowButton } from "../";
 
-export default function GalleryDetails() {
+/**
+ * @typedef {object} GalleryDetailsProp
+ * @property {string} name
+ * @property {string} description
+ * @property {number} followers
+ * @property {number} galleryId
+ * @property {boolean} following
+ * @property {function():void} refetch
+ */
+/**
+ * @param {GalleryDetailsProp} props
+ * @returns {JSX.Element}
+ */
+export default function GalleryDetails({ name, description, followers, galleryId, following, refetch }) {
 	return (
 		<section className="gallery-details">
 			<header>
-				<h3>Gallery Name</h3>
+				<h3>{name}</h3>
 			</header>
 			<main>
-				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam eos velit magnam incidunt deserunt, neque accusamus culpa fugit sint aut libero autem, amet doloribus officiis natus enim corporis. Eligendi, provident.</p>
+				<p>{description}</p>
 			</main>
 			<footer>
-				<h4>12 Followers</h4>
-				<FollowButton/>
+				<h4>{followers || 0} {followers === 1 ? "Follower" : "Followers"}</h4>
+				<FollowButton
+					galleryId={galleryId}
+					following={following}
+					refetch={refetch}
+				/>
 			</footer>
 		</section>
 	);
