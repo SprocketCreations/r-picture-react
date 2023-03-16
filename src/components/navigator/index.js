@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "../../utils";
 
 export default function Navigator() {
-	const [user] = useUser();
+	const [user, setUser] = useUser();
 	const [collapsed, setCollapsed] = useState(false);
 
 	const navigate = useNavigate();
@@ -15,6 +15,10 @@ export default function Navigator() {
 	const search = event => {
 		event.preventDefault();
 		navigate(`/search/${encodeURIComponent(searchInput)}`);
+	};
+
+	const signout = event => {
+		setUser(null);
 	};
 
 	return (
@@ -41,15 +45,15 @@ export default function Navigator() {
 						</p>
 					</span>
 
-					<Link style={{visibility: signedIn ? "visible" : "hidden"}} to={`/user/${user.id}`}><h2 className="collapsable"><span className="icon">📫</span><span className="text">Profile</span></h2></Link>
+					<Link style={{ visibility: signedIn ? "visible" : "hidden" }} to={`/user/${user.id}`}><h2 className="collapsable"><span className="icon">📫</span><span className="text">Profile</span></h2></Link>
 
-					<span style={{visibility: signedIn ? "visible" : "hidden"}}>
+					<span style={{ visibility: signedIn ? "visible" : "hidden" }}>
 						<Link to="/picture/new"><h2 className="collapsable"><span className="icon">🖼</span><span className="text">New Picture</span></h2></Link>
 						<Link to="/gallery/new"><h2 className="collapsable"><span className="icon">📁</span><span className="text">New Gallery</span></h2></Link>
 					</span>
 
 
-					{signedIn ? <Link to="javascript:void(0);"><h2 className="collapsable"><span className="icon">🔓</span><span className="text">Sign Out</span></h2></Link>
+					{signedIn ? <Link onClick={signout} to="javascript:void(0);"><h2 className="collapsable"><span className="icon">🔓</span><span className="text">Sign Out</span></h2></Link>
 						: <Link to="/signin"><h2 className="collapsable"><span className="icon">🔐</span><span className="text">Sign In</span></h2></Link>}
 				</main>
 			</nav>
