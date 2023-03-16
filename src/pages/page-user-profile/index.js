@@ -13,6 +13,7 @@ import { useParams } from "react-router";
 export default function PageUserProfile() {
 	const [user] = useUser();
 	const { userId } = useParams();
+	const [oldUserId, setOldUserId] = useState(userId);
 	/** @type {[Array<number>, (pictures: Array<number>) => void]} */
 	const [pictures, setPictures] = useState([]);
 	const [userProfile, setUserProfile] = useState(null);
@@ -46,6 +47,12 @@ export default function PageUserProfile() {
 		}
 		setOutgoing(false);
 	};
+
+	if (oldUserId !== userId) {
+		setOldUserId(userId);
+		setOutgoing(true);
+		load();
+	}
 
 	useEffect(() => {
 		if (!outgoing && pictures.length === 0) {
