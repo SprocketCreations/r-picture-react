@@ -24,7 +24,7 @@ export default function PageHome() {
 			if (response.status === 200) {
 				const json = await response.json();
 				console.log(json);
-				setPictures(json.pictures);
+				setPictures(json.pictures.map(pictureId => ({id: pictureId})));
 			}
 		} catch (error) {
 			console.log(error);
