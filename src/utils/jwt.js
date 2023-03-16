@@ -43,12 +43,14 @@ export const unlistenToChange = callback => {
  * @returns {User} A copy of the user.
  */
 export const getUser = () => {
-	if(!user.token) {
+	if (!user.token) {
 		const userCookie = getCookie("user", JSON.parse);
-		console.log(userCookie);
-		user.displayName = userCookie.displayName;
-		user.id = userCookie.id;
-		user.token = userCookie.token;
+		if (userCookie) {
+			console.log(userCookie);
+			user.displayName = userCookie.displayName;
+			user.id = userCookie.id;
+			user.token = userCookie.token;
+		}
 	}
 	return { ...user };
 };

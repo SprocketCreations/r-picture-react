@@ -5,12 +5,14 @@ import "./style.css";
  * @typedef {object} NewPictureDetailsProp
  * @property {string} name The name of the picture to display.
  * @property {(name: string) => void} setName A setter for the name.
+ * @property {string} description The description of the picture.
+ * @property {(name: string) => void} setDescription A setter for the description.
  */
 /**
  * @param {NewPictureDetailsProp} props
  * @returns {JSX.Element}
  */
-export default function NewPictureDetails({ name, setName }) {
+export default function NewPictureDetails({ name, setName, description, setDescription }) {
 	return (
 		<section className="new-picture-details">
 			<header>
@@ -27,6 +29,16 @@ export default function NewPictureDetails({ name, setName }) {
 					type="text"
 					name="picture-name"
 					id="picture-name" />
+				<label htmlFor="picture-description">
+					<span>Description</span>
+				</label>
+				<textarea
+					value={description}
+					onChange={event => setDescription(event.target.value)}
+					type="text"
+					name="picture-description"
+					id="picture-description"
+					rows="10"/>
 			</main>
 		</section>
 	);
