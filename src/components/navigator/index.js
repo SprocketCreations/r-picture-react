@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useUser } from "../../utils";
 
 export default function Navigator() {
+	const [user] = useUser();
 	const [collapsed, setCollapsed] = useState(false);
 
 	const navigate = useNavigate();
 	const [searchInput, setSearchInput] = useState("");
 
-	const signedIn = false;
+	const signedIn = !!user.id;
 
 	const search = event => {
 		event.preventDefault();
@@ -30,7 +32,7 @@ export default function Navigator() {
 							<span className="icon">🔎</span>
 							<span className="text">
 								<form onSubmit={search}>
-									<input value={searchInput} onChange={event=>setSearchInput(event.target.value)} type="search" name="search" id="search" />
+									<input value={searchInput} onChange={event => setSearchInput(event.target.value)} type="search" name="search" id="search" />
 								</form>
 							</span>
 						</h2></Link>
@@ -39,9 +41,9 @@ export default function Navigator() {
 						</p>
 					</span>
 
-					<Link to="/user/1"><h2 className="collapsable"><span className="icon">📫</span><span className="text">Profile</span></h2></Link>
+					<Link style={{visibility: signedIn ? "visible" : "hidden"}} to={`/user/${user.id}`}><h2 className="collapsable"><span className="icon">📫</span><span className="text">Profile</span></h2></Link>
 
-					<span>
+					<span style={{visibility: signedIn ? "visible" : "hidden"}}>
 						<Link to="/picture/new"><h2 className="collapsable"><span className="icon">🖼</span><span className="text">New Picture</span></h2></Link>
 						<Link to="/gallery/new"><h2 className="collapsable"><span className="icon">📁</span><span className="text">New Gallery</span></h2></Link>
 					</span>
