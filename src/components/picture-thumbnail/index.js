@@ -57,6 +57,7 @@ export default function PictureThumbnail({ pictureId, galleryId }) {
 					name: json.name,
 					commentCount: json.comments.length,
 					score: json.score,
+					url: json.imageURL,
 					owner: {
 						id: json.owner?.id,
 						displayName: json.owner?.displayName
@@ -89,7 +90,7 @@ export default function PictureThumbnail({ pictureId, galleryId }) {
 		<article className="picture-thumbnail">
 			<main>
 				<Link to={`/picture/${pictureId}`}>
-					<img src="http://placekitten.com/200/300" />
+					<img src={picture?.url} />
 				</Link>
 			</main>
 			<header className="picture-meta">

@@ -4,7 +4,6 @@ import "./style.css";
 import { NewPictureDetails, NewPicturePreview, NewPictureTags, TwoColumn } from "../../components";
 import { useNavigate } from "react-router";
 import { useUser } from "../../utils";
-import aws from "aws-sdk";
 
 export default function PageNewPicture() {
 	const [user] = useUser();
@@ -19,45 +18,31 @@ export default function PageNewPicture() {
 
 	const postPictureToAPI = async () => {
 		try {
-			const responseFromAPI = await fetch(`${process.env.REACT_APP_API_HOST}/api/picture`, {
+			const formData = new FormData();
+			formData.append("name", name);
+			formData.append("description", description);
+			formData.append("tags", JSON.stringify(tags));
+			formData.append("picture", src);
+
+			const response = await fetch(`${process.env.REACT_APP_API_HOST}/api/picture`, {
 				method: "POST",
 				headers: {
-					"Content-Type": "application/json",
 					authorization: `Bearer ${user.token}`
 				},
-				body: JSON.stringify({
-					name: name,
-					tags: tags
-				}),
+				body: formData
 			});
 
-			if (responseFromAPI.status === 201) {
+			if (response.status === 201) {
 				//Created
-				const apiJson = await responseFromAPI.json();
-				console.log(apiJson);
+				const json = await response.json();
+				console.log(json);
+				
 
-				// new aws.S3.PresignedPost()
+				setSrc(null);
+				setName("");
+				setTags([]);
 
-				// const data = await (new aws.S3.PresignedPost(apiJson.signedRequest).promise());
-
-				const responseFromAWS = await fetch(apiJson.signedRequest, {
-					method: "PUT",
-					headers: { 'Content-Type': 'multipart/form-data' },
-					body: src
-				});
-
-				if (responseFromAWS.status === 200) {
-					const awsJson = await responseFromAWS.json();
-					console.log(awsJson);
-				} else {
-					console.log(responseFromAWS);
-				}
-
-				// setSrc(null);
-				// setName("");
-				// setTags([]);
-
-				//navigate(`/picture/${json.id}`);
+				navigate(`/picture/${json.id}`);
 			}
 		} catch (error) {
 			console.log(error);
