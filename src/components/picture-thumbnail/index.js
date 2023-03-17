@@ -62,6 +62,7 @@ export default function PictureThumbnail({ pictureId, galleryId }) {
 						id: json.owner?.id,
 						displayName: json.owner?.displayName
 					},
+					galleries: json.galleries?.map(gallery => gallery.id),
 					gallery: {
 						id: galleryId,
 						name: json.galleries?.find(gallery => gallery.id === galleryId)?.name
@@ -110,7 +111,11 @@ export default function PictureThumbnail({ pictureId, galleryId }) {
 						<Link to={`/picture/${pictureId}`}>{picture?.commentCount || 0}💬</Link>
 					</column>
 					<column>
-						<ForwardButton />
+						<ForwardButton
+							takenGalleryIds={picture?.galleries}
+							pictureId={pictureId}
+							refetch={load}
+						/>
 					</column>
 					<column className="vote-widget">
 						<PictureVoting
