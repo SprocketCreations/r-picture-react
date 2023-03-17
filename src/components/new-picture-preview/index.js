@@ -27,7 +27,7 @@ export default function NewPicturePreview({ setSrc, src }) {
 				</div>}
 				{src && <img src={src} alt="The picture you just selected." />}
 			</label>
-			<input onChange={upload} type="file" name="picture-file" id="picture-file" style={{ display: "none" }} />
+			<input onChange={upload} type="file" accept=".jpg" name="picture-file" id="picture-file" style={{ display: "none" }} />
 		</section>
 	);
 }
