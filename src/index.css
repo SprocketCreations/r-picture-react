@@ -98,8 +98,10 @@ code {
 	--text-link: blue;
 	--text-link-visited: purple;
 
-	--size-content-width: calc(100vw / 3);
-	--size-content-gutter: calc(calc(100vw - var(--size-content-width)) / 2);
+	--scrollbar-width: 0px;
+	--window-width: calc(100vw - var(--scrollbar-width));
+	--size-content-width: calc(var(--window-width) / 3);
+	--size-content-gutter: calc(calc(var(--window-width) - var(--size-content-width)) / 2);
 	--size-sidebar-width: 256px;
 	--size-gap: 1em;
 	--size-padding: .5em 1em;
