@@ -63,25 +63,23 @@ export default function PageUserProfile() {
 	}, []);
 
 	return (
-		<main className="page-user-profile">
-			<TwoColumn left={
-				<Feed>
-					{pictures.map(pictureId =>
-						<PictureThumbnail
-							key={pictureId}
-							pictureId={pictureId}
-						/>)}
-				</Feed>
-			} right={
-				<UserDetails
-					name={userProfile?.name}
-					bio={userProfile?.bio}
-					followers={userProfile?.followers}
-					userId={userId}
-					following={userProfile?.following}
-					refetch={load}
-				/>
-			} />
-		</main>
+		<TwoColumn left={
+			<Feed>
+				{pictures.map(pictureId =>
+					<PictureThumbnail
+						key={pictureId}
+						pictureId={pictureId}
+					/>)}
+			</Feed>
+		} right={
+			<UserDetails
+				name={userProfile?.name}
+				bio={userProfile?.bio}
+				followers={userProfile?.followers}
+				userId={userId}
+				following={userProfile?.following}
+				refetch={load}
+			/>
+		} />
 	);
 }

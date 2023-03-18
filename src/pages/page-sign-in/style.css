@@ -1,9 +1,4 @@
-.page-sign-in header,
-.page-sign-in footer {
-	text-align: center;
-}
-
-.page-sign-in section.sign-in-wrapper {
+section.page-sign-in {
 	background-color: var(--color-neutral-3);
 
 	padding: var(--size-padding);
@@ -15,6 +10,12 @@
 	justify-content: center;
 	align-items: stretch;
 }
+
+.page-sign-in header,
+.page-sign-in footer {
+	text-align: center;
+}
+
 
 .page-sign-in form.sign-in-form {
 	display: flex;

@@ -1,25 +1,22 @@
-.two-column {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-
-	justify-content: space-between;
-}
-
-.two-column>div {
+/* main.two-column {
 	display: flex;
 	flex-direction: column;
 	gap: var(--size-gap);
 
 	min-height: 100vh;
-}
+} */
 
 /* Left column */
-.two-column>div:first-of-type {
+main.two-column {
 	width: var(--size-content-width);
 }
 
 /* Right column */
-.two-column>div:last-of-type {
+footer.two-column {
 	width: var(--size-sidebar-width);
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-gap);
+	align-items: flex-end;
 }

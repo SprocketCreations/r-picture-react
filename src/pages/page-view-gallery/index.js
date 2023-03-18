@@ -52,25 +52,23 @@ export default function PageViewGallery() {
 	}, []);
 
 	return (
-		<main className="page-view-gallery">
-			<TwoColumn left={
-				<Feed>
-					{pictures.map(pictureId =>
-						<PictureThumbnail
-							key={pictureId}
-							pictureId={pictureId}
-						/>)}
-				</Feed>
-			} right={
-				<GalleryDetails
-					name={gallery?.name}
-					description={gallery?.description}
-					followers={gallery?.followers}
-					galleryId={gallery?.id}
-					following={gallery?.following}
-					refetch={load}
-				/>
-			} />
-		</main>
+		<TwoColumn left={
+			<Feed>
+				{pictures.map(pictureId =>
+					<PictureThumbnail
+						key={pictureId}
+						pictureId={pictureId}
+					/>)}
+			</Feed>
+		} right={
+			<GalleryDetails
+				name={gallery?.name}
+				description={gallery?.description}
+				followers={gallery?.followers}
+				galleryId={gallery?.id}
+				following={gallery?.following}
+				refetch={load}
+			/>
+		} />
 	);
 }

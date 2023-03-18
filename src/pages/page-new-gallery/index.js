@@ -5,10 +5,8 @@ import { NewGalleryDetails, TwoColumn } from "../../components";
 
 export default function PageNewGallery() {
 	return (
-		<main className="page-new-gallery">
-			<TwoColumn left ={
-				<NewGalleryDetails/>
-			}/>
-		</main>
+		<TwoColumn left={
+			<NewGalleryDetails />
+		} />
 	);
 }

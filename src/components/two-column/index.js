@@ -12,13 +12,13 @@ import "./style.css";
  */
 export default function TwoColumn({left, right}) {
 	return (
-		<section className="two-column">
-			<div className="two-column-left">
+		<>
+			<main className="two-column">
 				{left}
-			</div>
-			<div className="two-column-right">
+			</main>
+			<footer className="two-column">
 				{right}
-			</div>
-		</section>
+			</footer>
+		</>
 	);
 }
