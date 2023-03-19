@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import { AddToGallery } from "../";
+import { useUser } from "../../utils";
 
 /**
  * @typedef {object} ForwardButtonProp
@@ -14,11 +15,12 @@ import { AddToGallery } from "../";
  * @returns {JSX.Element}
  */
 export default function ForwardButton({ takenGalleryIds, pictureId, refetch }) {
+	const [user] = useUser();
 	const [open, setOpen] = useState(false);
-
+	
 	return (
 		<section className="forward-button">
-			<button onClick={() => setOpen(true)}>⏩</button>
+			<button onClick={() => setOpen(true)} style={!user.token ? {visibility: "hidden"} : {}}>⏩</button>
 			{open && <AddToGallery takenGalleryIds={takenGalleryIds} pictureId={pictureId} close={() => setOpen(false)} refetch={refetch}/>}
 		</section>
 	);

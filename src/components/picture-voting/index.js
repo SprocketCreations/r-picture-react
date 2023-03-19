@@ -62,15 +62,15 @@ export default function PictureVoting({ pictureId, score, id, delta, refetch }) 
 	return (
 		<section className="picture-voting">
 			{delta === 1
-				? <button onClick={() => vote(0)} className="voted">⬆</button>
-				: <button onClick={() => vote(1)}>⬆</button >
+				? <button style={!user.token ? {visibility: "hidden"} : {}} onClick={() => vote(0)} className="voted">⬆</button>
+				: <button style={!user.token ? {visibility: "hidden"} : {}} onClick={() => vote(1)}>⬆</button >
 			}
 
 			<span className={id ? "voted" : ""}>{score || 0}</span>
 
 			{delta === -1
-				? <button onClick={() => vote(0)} className="voted">⬇</button>
-				: <button onClick={() => vote(-1)}>⬇</button>
+				? <button style={!user.token ? {visibility: "hidden"} : {}} onClick={() => vote(0)} className="voted">⬇</button>
+				: <button style={!user.token ? {visibility: "hidden"} : {}} onClick={() => vote(-1)}>⬇</button>
 			}
 		</section >
 	);

@@ -136,10 +136,12 @@ export default function FollowButton({ galleryId, userId, following, refetch }) 
 	};
 
 	return (
-		<section className="follow-details">
-			{following !== undefined && following !== null &&
-				(following ? <button onClick={unfollow}><span className="following">Following</span><span className="unfollow">Unfollow</span></button>
-					: <button onClick={follow}>Follow</button>)}
-		</section >
+		user.token ?
+			<section className="follow-details">
+				{following !== undefined && following !== null &&
+					(following ? <button onClick={unfollow}><span className="following">Following</span><span className="unfollow">Unfollow</span></button>
+						: <button onClick={follow}>Follow</button>)}
+			</section >
+			: undefined
 	);
 }
