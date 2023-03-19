@@ -20,7 +20,7 @@ export default function ForwardButton({ takenGalleryIds, pictureId, refetch }) {
 	
 	return (
 		<section className="forward-button">
-			<button onClick={() => setOpen(true)} style={user.token ? {visibility: "hidden"} : {}}>⏩</button>
+			<button onClick={() => setOpen(true)} style={!user.token ? {visibility: "hidden"} : {}}>⏩</button>
 			{open && <AddToGallery takenGalleryIds={takenGalleryIds} pictureId={pictureId} close={() => setOpen(false)} refetch={refetch}/>}
 		</section>
 	);
