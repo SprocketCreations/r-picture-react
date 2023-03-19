@@ -71,6 +71,6 @@ export default function PageNewPicture() {
 			</form>
 		} right={
 			<NewPictureTags tags={tags} setTags={setTags} />
-		} />
+		} stack={true} />
 	);
 }

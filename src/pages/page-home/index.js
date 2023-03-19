@@ -51,8 +51,8 @@ export default function PageHome() {
 						galleryId={picture.galleryId}
 					/>)}
 			</Feed>
-		} right={[
-			//Nothing for now.
-		]} />
+		} right={
+			null//Nothing for now.
+		} stack={true} />
 	);
 }

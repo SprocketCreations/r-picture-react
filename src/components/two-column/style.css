@@ -48,7 +48,7 @@ footer.two-column {
 		align-items: center;
 	}
 
-	.two-column>button {
+	.two-column.dont-stack>button {
 		display: block;
 	}
 }
