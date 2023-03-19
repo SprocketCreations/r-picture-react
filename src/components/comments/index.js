@@ -53,7 +53,7 @@ export default function Comments({ children, pictureId, refetch }) {
 
 	return (
 		<section className="comments">
-			<header>
+			<header style={!user.token ? {display: "none"} : {}}>
 				<form onSubmit={submit}>
 					<textarea
 						value={text}
