@@ -58,8 +58,13 @@
 	text-decoration: none;
 }
 
+
+.navigator>nav a.active,
 .navigator>nav a:hover {
 	background-color: var(--color-neutral-1);
+}
+.navigator>nav a.active {
+	cursor: auto;
 }
 
 .navigator>nav a>h1,
@@ -202,6 +207,7 @@
 	.navigator .open-search-bar {
 		height: 2em;
 	}
+
 	.navigator form {
 		display: flex;
 		margin: 0;
