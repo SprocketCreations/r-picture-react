@@ -1,8 +1,4 @@
-.page-sign-up header {
-	text-align: center;
-}
-
-.page-sign-up section.sign-up-wrapper {
+section.page-sign-up {
 	background-color: var(--color-neutral-3);
 
 	padding: var(--size-padding);
@@ -13,6 +9,12 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: stretch;
+
+	width: var(--size-content-width);
+}
+
+.page-sign-up header {
+	text-align: center;
 }
 
 .page-sign-up form.sign-up-form {

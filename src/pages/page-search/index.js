@@ -87,28 +87,26 @@ export default function PageSearch() {
 	}, []);
 
 	return (
-		<main className="page-search">
-			<TwoColumn left={
-				<Feed>
-					{pictures.map(pictureId =>
-						<PictureThumbnail
-							key={pictureId}
-							pictureId={pictureId}
-						/>)}
-				</Feed>
-			} right={
-				<SearchGalleries>
-					{galleries.map(gallery =>
-						<ListedGallery
-							key={gallery.id}
-							id={gallery.id}
-							name={gallery.name}
-							followerCount={gallery.followerCount}
-							following={gallery.following}
-							refetch={loadGalleries}
-						/>)}
-				</SearchGalleries>
-			} />
-		</main>
+		<TwoColumn left={
+			<Feed>
+				{pictures.map(pictureId =>
+					<PictureThumbnail
+						key={pictureId}
+						pictureId={pictureId}
+					/>)}
+			</Feed>
+		} right={
+			<SearchGalleries>
+				{galleries.map(gallery =>
+					<ListedGallery
+						key={gallery.id}
+						id={gallery.id}
+						name={gallery.name}
+						followerCount={gallery.followerCount}
+						following={gallery.following}
+						refetch={loadGalleries}
+					/>)}
+			</SearchGalleries>
+		} />
 	);
 }

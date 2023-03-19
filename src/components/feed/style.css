@@ -4,4 +4,6 @@
 	flex-wrap: nowrap;
 
 	gap: var(--size-gap);
+
+	width: var(--size-content-width);
 }

@@ -1,8 +1,11 @@
 .in-galleries {
 	background-color: var(--color-neutral-3);
-	
+
 	padding: var(--size-padding);
+
+	width: var(--size-sidebar-width);
 }
+
 .in-galleries>main {
 	display: flex;
 	flex-direction: column;

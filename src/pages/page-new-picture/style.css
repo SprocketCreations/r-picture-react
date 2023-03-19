@@ -1,9 +1,9 @@
-.page-new-picture {}
-
-.page-new-picture form.new-picture-form {
+.page-new-picture {
 	display: flex;
 	flex-direction: column;
 	gap: var(--size-gap);
+
+	width: var(--size-content-width);
 }
 
 .page-new-picture .submit-button {

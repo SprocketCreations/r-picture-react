@@ -17,11 +17,12 @@
 	position: fixed;
 
 	height: 100vh;
-	width: var(--size-sidebar-width);
+	width: var(--size-navigator-width);
 
 	display: flex;
 	flex-direction: column;
 }
+
 .navigator>nav {
 	white-space: nowrap;
 }
@@ -32,8 +33,8 @@
 }
 
 .navigator>nav>header a {
-	
-	padding-left: .75em;
+	padding: .75em;
+	padding-bottom: 0;
 }
 
 .navigator>nav>main {
@@ -51,15 +52,19 @@
 }
 
 .navigator>nav a {
-	padding: var(--size-padding);
-	padding-left: 0;
+	padding: 0;
 	width: 100%;
 
 	text-decoration: none;
 }
 
+
+.navigator>nav a.active,
 .navigator>nav a:hover {
 	background-color: var(--color-neutral-1);
+}
+.navigator>nav a.active {
+	cursor: auto;
 }
 
 .navigator>nav a>h1,
@@ -74,8 +79,9 @@
 .navigator>nav .collapsable {
 	display: flex;
 
-	gap: 0.5em;
+	gap: 8px;
 }
+
 .navigator>nav .collapsable span.text {
 	display: flex;
 	justify-content: flex-start;
@@ -105,7 +111,9 @@
 }
 
 .navigator>nav p {
+	margin: 0;
 	padding: var(--size-padding);
+
 	text-align: center;
 	white-space: nowrap;
 	transition-property: opacity;
@@ -114,4 +122,101 @@
 
 .navigator>nav.collapsed p {
 	opacity: 0;
+}
+
+.navigator input[type=text] {
+	width: 100%;
+}
+
+.navigator form {
+	margin-right: var(--size-gap);
+}
+
+.navigator .search-bar p {
+	display: none;
+}
+
+@media screen and ((max-height: 25rem) or (max-width: 65rem)) {
+	.navigator {
+		order: 3;
+
+		width: 100vw;
+
+		height: 3em;
+	}
+
+	.navigator>nav {
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		width: auto;
+		height: 3em;
+		overflow: hidden;
+
+	}
+
+	.navigator>nav>header {
+		display: none;
+	}
+
+	.navigator>nav>main {
+		flex-direction: row;
+	}
+
+	.navigator>nav a {
+		width: auto;
+	}
+
+	.navigator>nav p,
+	.navigator>nav .collapsable>h1,
+	.navigator>nav .collapsable span.text {
+		display: none;
+	}
+
+	.navigator>nav>main>span {
+		flex-direction: row;
+	}
+
+	.navigator>nav.collapsed h2 {
+		display: flex;
+		width: auto;
+	}
+
+	.navigator>nav.collapsed {
+		width: auto;
+	}
+
+	.navigator .search-bar {
+		height: 0px;
+		display: flex !important;
+		overflow: hidden;
+
+		transition-property: height;
+		transition-duration: 100ms;
+
+		background-color: var(--color-neutral-2);
+		position: fixed;
+		bottom: 3rem;
+		left: 0;
+		right: 0;
+
+		justify-content: center !important;
+	}
+
+	.navigator .open-search-bar {
+		height: 2em;
+	}
+
+	.navigator form {
+		display: flex;
+		margin: 0;
+		align-items: center;
+	}
+
+	.navigator .search-bar p {
+		font-size: 1rem;
+		font-weight: normal;
+		display: flex !important;
+	}
 }

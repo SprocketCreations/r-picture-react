@@ -42,19 +42,17 @@ export default function PageHome() {
 	}, []);
 
 	return (
-		<main className="page-home">
-			<TwoColumn left={
-				<Feed>
-					{pictures.map(picture =>
-						<PictureThumbnail
-							key={picture.id}
-							pictureId={picture.id}
-							galleryId={picture.galleryId}
-						/>)}
-				</Feed>
-			} right={[
-				//Nothing for now.
-			]} />
-		</main>
+		<TwoColumn left={
+			<Feed>
+				{pictures.map(picture =>
+					<PictureThumbnail
+						key={picture.id}
+						pictureId={picture.id}
+						galleryId={picture.galleryId}
+					/>)}
+			</Feed>
+		} right={
+			null//Nothing for now.
+		} stack={true} />
 	);
 }

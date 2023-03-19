@@ -36,7 +36,7 @@ export default function PageNewPicture() {
 				//Created
 				const json = await response.json();
 				console.log(json);
-				
+
 
 				setSrc(null);
 				setName("");
@@ -60,19 +60,17 @@ export default function PageNewPicture() {
 	}
 
 	return (
-		<main className="page-new-picture">
-			<TwoColumn left={
-				<form onSubmit={submit} className="new-picture-form">
-					<NewPictureDetails name={name} setName={setName} description={description} setDescription={setDescription} />
-					<NewPicturePreview setSrc={setSrc} src={src} />
-					<footer className="submit-button">
-						{!src && <p>Picture is required.</p>}
-						<button>Post</button>
-					</footer>
-				</form>
-			} right={
-				<NewPictureTags tags={tags} setTags={setTags} />
-			} />
-		</main>
+		<TwoColumn left={
+			<form onSubmit={submit} className="page-new-picture">
+				<NewPictureDetails name={name} setName={setName} description={description} setDescription={setDescription} />
+				<NewPicturePreview setSrc={setSrc} src={src} />
+				<footer className="submit-button">
+					{!src && <p>Picture is required.</p>}
+					<button>Post</button>
+				</footer>
+			</form>
+		} right={
+			<NewPictureTags tags={tags} setTags={setTags} />
+		} stack={true} />
 	);
 }
