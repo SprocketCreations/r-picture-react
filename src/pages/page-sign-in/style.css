@@ -9,6 +9,8 @@ section.page-sign-in {
 	flex-direction: column;
 	justify-content: center;
 	align-items: stretch;
+
+	width: var(--size-content-width);
 }
 
 .page-sign-in header,

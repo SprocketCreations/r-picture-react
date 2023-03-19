@@ -9,6 +9,8 @@ section.page-sign-up {
 	flex-direction: column;
 	justify-content: center;
 	align-items: stretch;
+
+	width: var(--size-content-width);
 }
 
 .page-sign-up header {

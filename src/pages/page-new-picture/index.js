@@ -61,7 +61,7 @@ export default function PageNewPicture() {
 
 	return (
 		<TwoColumn left={
-			<form onSubmit={submit} className="new-picture-form">
+			<form onSubmit={submit} className="page-new-picture">
 				<NewPictureDetails name={name} setName={setName} description={description} setDescription={setDescription} />
 				<NewPicturePreview setSrc={setSrc} src={src} />
 				<footer className="submit-button">
